@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15G1108" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="10117"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11542"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Application-->
@@ -732,23 +733,6 @@
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="eEv-9p-1m1" customClass="EZAudioPlot">
-                                <rect key="frame" x="20" y="7" width="440" height="100"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="100" id="KSz-ZJ-acr"/>
-                                </constraints>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="color">
-                                        <color key="value" red="0.25098040700000002" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="gain">
-                                        <real key="value" value="0.0"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="backgroundColor">
-                                        <color key="value" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </customView>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="fX6-dv-xBv">
                                 <rect key="frame" x="449" y="190" width="13" height="17"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="0" id="HPA-hC-fQK">
@@ -773,24 +757,28 @@
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
+                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="7QF-ff-LPT" customClass="SKView">
+                                <rect key="frame" x="20" y="11" width="440" height="96"/>
+                            </customView>
                         </subviews>
                         <constraints>
                             <constraint firstItem="ukc-2p-lsp" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" symbolic="YES" id="1Yp-rl-J0w"/>
                             <constraint firstItem="V5N-ci-jrX" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="-2" id="39z-XY-thO"/>
+                            <constraint firstItem="7QF-ff-LPT" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="3ne-Vy-5yw"/>
                             <constraint firstAttribute="trailing" secondItem="fX6-dv-xBv" secondAttribute="trailing" constant="20" symbolic="YES" id="56H-wX-d0k"/>
                             <constraint firstAttribute="trailing" secondItem="7Bf-8e-Pou" secondAttribute="trailing" constant="20" symbolic="YES" id="5Rj-l6-F0m"/>
-                            <constraint firstItem="eEv-9p-1m1" firstAttribute="top" secondItem="OW9-e6-Rzz" secondAttribute="bottom" constant="8" symbolic="YES" id="ARw-n5-e0Q"/>
-                            <constraint firstAttribute="trailing" secondItem="eEv-9p-1m1" secondAttribute="trailing" constant="20" symbolic="YES" id="II4-fn-tA8"/>
+                            <constraint firstItem="7QF-ff-LPT" firstAttribute="top" secondItem="OW9-e6-Rzz" secondAttribute="bottom" constant="8" id="BMq-jj-ZYZ"/>
+                            <constraint firstAttribute="bottom" secondItem="7QF-ff-LPT" secondAttribute="bottom" constant="11" id="G5A-0U-KRM"/>
                             <constraint firstItem="fX6-dv-xBv" firstAttribute="top" secondItem="iqV-CO-zGI" secondAttribute="bottom" constant="8" symbolic="YES" id="Kcl-y2-9qP"/>
                             <constraint firstItem="ZBb-DW-gAt" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" symbolic="YES" id="OZD-tH-7zN"/>
                             <constraint firstItem="V5N-ci-jrX" firstAttribute="centerX" secondItem="m2S-Jp-Qdl" secondAttribute="centerX" id="SRV-Zp-SmM"/>
                             <constraint firstItem="V5N-ci-jrX" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" id="UgE-v7-M21"/>
-                            <constraint firstItem="eEv-9p-1m1" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" symbolic="YES" id="Ut4-JK-bYN"/>
                             <constraint firstAttribute="trailing" secondItem="uxD-yr-D9A" secondAttribute="trailing" constant="20" symbolic="YES" id="WLh-CH-6to"/>
                             <constraint firstAttribute="trailing" secondItem="OW9-e6-Rzz" secondAttribute="trailing" constant="20" symbolic="YES" id="ZPt-4m-GRH"/>
                             <constraint firstItem="iqV-CO-zGI" firstAttribute="top" secondItem="V5N-ci-jrX" secondAttribute="bottom" constant="8" symbolic="YES" id="aH1-Jg-Smr"/>
                             <constraint firstItem="7Bf-8e-Pou" firstAttribute="top" secondItem="uxD-yr-D9A" secondAttribute="bottom" constant="8" symbolic="YES" id="baU-pd-XvP"/>
                             <constraint firstItem="uxD-yr-D9A" firstAttribute="top" secondItem="fX6-dv-xBv" secondAttribute="bottom" constant="8" symbolic="YES" id="c7a-ln-N3h"/>
+                            <constraint firstAttribute="trailing" secondItem="7QF-ff-LPT" secondAttribute="trailing" constant="20" id="cwb-eN-ws3"/>
                             <constraint firstItem="qwV-fc-yf2" firstAttribute="top" secondItem="8EY-Xu-4sw" secondAttribute="bottom" constant="8" symbolic="YES" id="dWs-BJ-M0t"/>
                             <constraint firstItem="ZBb-DW-gAt" firstAttribute="top" secondItem="qwV-fc-yf2" secondAttribute="bottom" constant="8" symbolic="YES" id="gNB-bs-Y89"/>
                             <constraint firstItem="ukc-2p-lsp" firstAttribute="top" secondItem="ZBb-DW-gAt" secondAttribute="bottom" constant="8" symbolic="YES" id="khd-gx-nFJ"/>
@@ -804,7 +792,6 @@
                     </view>
                     <connections>
                         <outlet property="amplitudeLabel" destination="fX6-dv-xBv" id="DV1-Ji-p7Q"/>
-                        <outlet property="audioInputPlot" destination="eEv-9p-1m1" id="QfF-LY-akO"/>
                         <outlet property="frequencyLabel" destination="iqV-CO-zGI" id="jSy-dU-FSa"/>
                         <outlet property="noteNameWithFlatsLabel" destination="7Bf-8e-Pou" id="5pY-aS-W2n"/>
                         <outlet property="noteNameWithSharpsLabel" destination="uxD-yr-D9A" id="hvY-hd-fan"/>

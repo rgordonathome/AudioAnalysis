@@ -8,6 +8,7 @@
 
 import Cocoa
 import AudioKit
+import SpriteKit
 
 class ViewController: NSViewController {
 
@@ -17,9 +18,9 @@ class ViewController: NSViewController {
     @IBOutlet var noteNameWithFlatsLabel: NSTextField!
     @IBOutlet var audioInputPlot: EZAudioPlot!
     
-    var mic: AKMicrophone!
-    var tracker: AKFrequencyTracker!
-    var silence: AKBooster!
+    public var mic: AKMicrophone!
+    public var tracker: AKFrequencyTracker!
+    public var silence: AKBooster!
     
     let noteFrequencies = [16.35,17.32,18.35,19.45,20.6,21.83,23.12,24.5,25.96,27.5,29.14,30.87]
     let noteNamesWithSharps = ["C", "C♯","D","D♯","E","F","F♯","G","G♯","A","A♯","B"]
@@ -41,14 +42,26 @@ class ViewController: NSViewController {
         mic = AKMicrophone()
         tracker = AKFrequencyTracker.init(mic)
         silence = AKBooster(tracker, gain: 0)
+        
+        // Create the game scene
+        let scene = Scene(size: CGSize(width: 440, height: 100))
+        
+        // Configure and present the scene
+        let skView = SKView(frame: NSRect(origin: CGPoint(x: 0, y: 0), size: CGSize(width: 440, height: 100)))
+        skView.showsFPS = true
+        skView.showsNodeCount = true
+        skView.ignoresSiblingOrder = true
+        view.addSubview(skView)
+        scene.scaleMode = .aspectFit
+        skView.presentScene(scene)
     }
     
     override func viewDidAppear() {
         super.viewDidAppear()
         AudioKit.output = silence
         AudioKit.start()
-        setupPlot()
-        Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(ViewController.updateUI), userInfo: nil, repeats: true)
+        //setupPlot()
+        //Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(ViewController.updateUI), userInfo: nil, repeats: true)
     }
 
     override var representedObject: Any? {
