@@ -20,9 +20,9 @@ class Scene : SKScene {
         // Show the amplitude
         amplitudeLabel.text = "nothing analyzed yet"
         amplitudeLabel.fontColor = SKColor.white
-        amplitudeLabel.fontSize = 48
+        amplitudeLabel.fontSize = 24
         amplitudeLabel.zPosition = 150
-        amplitudeLabel.position = CGPoint(x: size.width / 2, y: size.height / 2)
+        amplitudeLabel.position = CGPoint(x: size.width / 2, y: size.height / 5 * 2)
         addChild(amplitudeLabel)
         
         

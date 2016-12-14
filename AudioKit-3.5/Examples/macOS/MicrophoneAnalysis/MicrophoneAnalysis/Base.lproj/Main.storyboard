@@ -757,18 +757,12 @@
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="7QF-ff-LPT" customClass="SKView">
-                                <rect key="frame" x="20" y="11" width="440" height="96"/>
-                            </customView>
                         </subviews>
                         <constraints>
                             <constraint firstItem="ukc-2p-lsp" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" symbolic="YES" id="1Yp-rl-J0w"/>
                             <constraint firstItem="V5N-ci-jrX" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="-2" id="39z-XY-thO"/>
-                            <constraint firstItem="7QF-ff-LPT" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="3ne-Vy-5yw"/>
                             <constraint firstAttribute="trailing" secondItem="fX6-dv-xBv" secondAttribute="trailing" constant="20" symbolic="YES" id="56H-wX-d0k"/>
                             <constraint firstAttribute="trailing" secondItem="7Bf-8e-Pou" secondAttribute="trailing" constant="20" symbolic="YES" id="5Rj-l6-F0m"/>
-                            <constraint firstItem="7QF-ff-LPT" firstAttribute="top" secondItem="OW9-e6-Rzz" secondAttribute="bottom" constant="8" id="BMq-jj-ZYZ"/>
-                            <constraint firstAttribute="bottom" secondItem="7QF-ff-LPT" secondAttribute="bottom" constant="11" id="G5A-0U-KRM"/>
                             <constraint firstItem="fX6-dv-xBv" firstAttribute="top" secondItem="iqV-CO-zGI" secondAttribute="bottom" constant="8" symbolic="YES" id="Kcl-y2-9qP"/>
                             <constraint firstItem="ZBb-DW-gAt" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" symbolic="YES" id="OZD-tH-7zN"/>
                             <constraint firstItem="V5N-ci-jrX" firstAttribute="centerX" secondItem="m2S-Jp-Qdl" secondAttribute="centerX" id="SRV-Zp-SmM"/>
@@ -778,7 +772,6 @@
                             <constraint firstItem="iqV-CO-zGI" firstAttribute="top" secondItem="V5N-ci-jrX" secondAttribute="bottom" constant="8" symbolic="YES" id="aH1-Jg-Smr"/>
                             <constraint firstItem="7Bf-8e-Pou" firstAttribute="top" secondItem="uxD-yr-D9A" secondAttribute="bottom" constant="8" symbolic="YES" id="baU-pd-XvP"/>
                             <constraint firstItem="uxD-yr-D9A" firstAttribute="top" secondItem="fX6-dv-xBv" secondAttribute="bottom" constant="8" symbolic="YES" id="c7a-ln-N3h"/>
-                            <constraint firstAttribute="trailing" secondItem="7QF-ff-LPT" secondAttribute="trailing" constant="20" id="cwb-eN-ws3"/>
                             <constraint firstItem="qwV-fc-yf2" firstAttribute="top" secondItem="8EY-Xu-4sw" secondAttribute="bottom" constant="8" symbolic="YES" id="dWs-BJ-M0t"/>
                             <constraint firstItem="ZBb-DW-gAt" firstAttribute="top" secondItem="qwV-fc-yf2" secondAttribute="bottom" constant="8" symbolic="YES" id="gNB-bs-Y89"/>
                             <constraint firstItem="ukc-2p-lsp" firstAttribute="top" secondItem="ZBb-DW-gAt" secondAttribute="bottom" constant="8" symbolic="YES" id="khd-gx-nFJ"/>

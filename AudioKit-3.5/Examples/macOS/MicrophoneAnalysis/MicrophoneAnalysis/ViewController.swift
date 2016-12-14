@@ -47,7 +47,7 @@ class ViewController: NSViewController {
         let scene = Scene(size: CGSize(width: 440, height: 100))
         
         // Configure and present the scene
-        let skView = SKView(frame: NSRect(origin: CGPoint(x: 0, y: 0), size: CGSize(width: 440, height: 100)))
+        let skView = SKView(frame: NSRect(origin: CGPoint(x: 20, y: 11), size: CGSize(width: 440, height: 100)))
         skView.showsFPS = true
         skView.showsNodeCount = true
         skView.ignoresSiblingOrder = true
