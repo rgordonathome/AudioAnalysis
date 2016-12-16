@@ -27,9 +27,7 @@ class Scene : SKScene {
     
     // Circle
     var shapeCircle = SKShapeNode()
-    var shapeBackground = SKShapeNode()
     var centrePoint = CGPoint()
-    var backgroundSize = CGSize()
     
     override func didMove(to view: SKView) {
         
@@ -78,27 +76,15 @@ class Scene : SKScene {
         AudioKit.output = silence
         AudioKit.start()
         
-        // Configure the square that forms the "background"
-        backgroundSize = CGSize(width: self.size.width, height: self.size.height)
-        shapeBackground = SKShapeNode(rectOf: backgroundSize)
-        shapeBackground.position = centrePoint
-        shapeBackground.zPosition = 0
-        shapeBackground.fillColor = SKColor.red
-        addChild(shapeBackground)
-        
         // Configure the circle in the middle
         centrePoint = CGPoint(x: self.size.width / 2, y: self.size.height / 2)
         shapeCircle = SKShapeNode(circleOfRadius: 10)
         shapeCircle.position = centrePoint
-        shapeBackground.zPosition = 1
         addChild(shapeCircle)
         
     }
 
     override func update(_ currentTime: TimeInterval) {
-        
-        // Remove the background
-        shapeBackground.removeFromParent()
         
         // Remove the circle
         shapeCircle.removeFromParent()
@@ -139,24 +125,18 @@ class Scene : SKScene {
             
             // Show the amplitude
             labelAmplitude.text = "Amplitude is: " + String(format: "%0.2f", tracker.amplitude)
+            
+            // Set the colour of the background based on the frequency
+            backgroundColor = NSColor(hue: abs(CGFloat(tracker.frequency).remainder(dividingBy: 360)/360), saturation: 80/100, brightness: 90/100, alpha: 0.2)
 
         }
-        
+
         // Resize the circle based on amplitude
         shapeCircle = SKShapeNode(circleOfRadius: CGFloat(tracker.amplitude * 100))
         shapeCircle.position = centrePoint
         shapeCircle.zPosition = 0
         addChild(shapeCircle)
-        
-        // Set the colour of the background based on the frequency
-        backgroundSize = CGSize(width: self.size.width, height: self.size.height)
-        shapeBackground = SKShapeNode(rectOf: backgroundSize)
-        shapeBackground.position = centrePoint
-        shapeBackground.zPosition = 1
-        shapeBackground.fillColor = NSColor(hue: abs(CGFloat(tracker.frequency).remainder(dividingBy: 360)/360), saturation: 80/100, brightness: 90/100, alpha: 0.4)
-        addChild(shapeBackground)
 
-        print(abs(CGFloat(tracker.frequency).remainder(dividingBy: 360)))
         
     }
     
