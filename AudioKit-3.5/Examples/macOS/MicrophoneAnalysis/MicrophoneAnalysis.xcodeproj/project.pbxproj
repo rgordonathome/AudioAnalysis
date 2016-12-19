@@ -11,6 +11,7 @@
 		78D63E301D0FCDA300C53875 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78D63E2F1D0FCDA300C53875 /* ViewController.swift */; };
 		78D63E321D0FCDA300C53875 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 78D63E311D0FCDA300C53875 /* Assets.xcassets */; };
 		78D63E351D0FCDA300C53875 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 78D63E331D0FCDA300C53875 /* Main.storyboard */; };
+		811FFE151E082A9D0039D689 /* beat.wav in Resources */ = {isa = PBXBuildFile; fileRef = 811FFE141E082A9D0039D689 /* beat.wav */; };
 		81A3673D1E017ABE0035179C /* Scene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A3673C1E017ABE0035179C /* Scene.swift */; };
 		C446B40B1D45576C000AEFCA /* AudioKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C446B4091D455764000AEFCA /* AudioKit.framework */; };
 		C446B40C1D45576C000AEFCA /* AudioKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C446B4091D455764000AEFCA /* AudioKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -37,6 +38,7 @@
 		78D63E311D0FCDA300C53875 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		78D63E341D0FCDA300C53875 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		78D63E361D0FCDA300C53875 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		811FFE141E082A9D0039D689 /* beat.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = beat.wav; sourceTree = "<group>"; };
 		81A3673C1E017ABE0035179C /* Scene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Scene.swift; sourceTree = "<group>"; };
 		C446B4091D455764000AEFCA /* AudioKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioKit.framework; path = "../../../../Frameworks/AudioKit-macOS/AudioKit.framework"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -80,6 +82,7 @@
 				78D63E361D0FCDA300C53875 /* Info.plist */,
 				C446B4091D455764000AEFCA /* AudioKit.framework */,
 				81A3673C1E017ABE0035179C /* Scene.swift */,
+				811FFE141E082A9D0039D689 /* beat.wav */,
 			);
 			path = MicrophoneAnalysis;
 			sourceTree = "<group>";
@@ -151,6 +154,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				811FFE151E082A9D0039D689 /* beat.wav in Resources */,
 				78D63E321D0FCDA300C53875 /* Assets.xcassets in Resources */,
 				78D63E351D0FCDA300C53875 /* Main.storyboard in Resources */,
 			);

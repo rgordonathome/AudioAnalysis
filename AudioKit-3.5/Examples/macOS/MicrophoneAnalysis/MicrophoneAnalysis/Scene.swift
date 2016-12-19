@@ -14,6 +14,8 @@ class Scene : SKScene {
     var mic: AKMicrophone!
     var tracker: AKFrequencyTracker!
     var silence: AKBooster!
+    var audioFile : AKAudioFile!
+    var player : AKAudioPlayer!
     
     let noteFrequencies = [16.35,17.32,18.35,19.45,20.6,21.83,23.12,24.5,25.96,27.5,29.14,30.87]
     let noteNamesWithSharps = ["C", "C♯","D","D♯","E","F","F♯","G","G♯","A","A♯","B"]
@@ -66,15 +68,34 @@ class Scene : SKScene {
         labelNoteFlats.position = CGPoint(x: size.width / 2, y: size.height / 5 * 4)
         addChild(labelNoteFlats)
         
-        // Configure AudioKit
-        AKSettings.audioInputEnabled = true
-        mic = AKMicrophone()
-        tracker = AKFrequencyTracker.init(mic)
-        silence = AKBooster(tracker, gain: 0)
-
-        // Start AudioKit
-        AudioKit.output = silence
-        AudioKit.start()
+        // Try to get a reference to the audio file
+        do {
+            audioFile = try AKAudioFile(readFileName: "beat.wav", baseDir: .resources)
+        } catch {
+            print("Could not open audio file")
+        }
+        
+        // Play the audio file
+        if audioFile != nil {
+        
+            do {
+                player = try AKAudioPlayer(file: audioFile)
+                player.looping = true
+            } catch {
+                print("Could not play audio file")
+            }
+            
+        }
+        
+        // Analyse the song being played
+        if player != nil {
+            tracker = AKFrequencyTracker(player)
+            
+            // Start AudioKit
+            AudioKit.output = tracker
+            AudioKit.start()
+            player.play()
+        }
         
         // Configure the circle in the middle
         centrePoint = CGPoint(x: self.size.width / 2, y: self.size.height / 2)
@@ -90,7 +111,7 @@ class Scene : SKScene {
         shapeCircle.removeFromParent()
         
         // Only analyze if volume (amplitude) reaches a certain threshold
-        if tracker.amplitude > 0.1 {
+        if tracker.amplitude > 0.1 && player != nil {
             
             // Show the frequency
             labelFrequency.text = "Frequency is: " + String(format: "%0.1f", tracker.frequency)
