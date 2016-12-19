@@ -679,7 +679,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="cfR-iP-ivh"/>
                                 </constraints>
-                                <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="center" title="Sing into the Microphone" drawsBackground="YES" id="nuK-R3-1xc">
+                                <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="center" title="The song you hear is analysed below" drawsBackground="YES" id="nuK-R3-1xc">
                                     <font key="font" metaFont="systemBold" size="24"/>
                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="backgroundColor" red="0.0097406406529999996" green="0.71086275580000002" blue="0.1231240827" alpha="1" colorSpace="calibratedRGB"/>
