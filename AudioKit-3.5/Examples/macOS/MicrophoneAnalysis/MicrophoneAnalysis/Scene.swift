@@ -148,7 +148,10 @@ class Scene : SKScene {
             labelAmplitude.text = "Amplitude is: " + String(format: "%0.2f", tracker.amplitude)
             
             // Set the colour of the background based on the frequency
-            backgroundColor = NSColor(hue: abs(CGFloat(tracker.frequency).remainder(dividingBy: 360)/360), saturation: 80/100, brightness: 90/100, alpha: 0.2)
+            // See for further details about how hue value works:
+            // http://russellgordon.ca/rsgc/2016-17/ics2o/HSB%20Colour%20Model%20-%20Summary%20-%20Swift.pdf
+            let hue = abs(CGFloat(tracker.frequency).remainder(dividingBy: 360)/360)
+            backgroundColor = NSColor(hue: hue, saturation: 0.8, brightness: 0.9, alpha: 0.2)
 
         }
 
