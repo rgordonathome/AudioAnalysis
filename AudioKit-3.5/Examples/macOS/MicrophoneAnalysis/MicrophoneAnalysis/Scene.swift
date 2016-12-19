@@ -35,6 +35,9 @@ class Scene : SKScene {
     var elapsedTime: Int = 0
     var startTime: Int?
     
+    // For tracking frames
+    var frameCount = 0
+    
     override func didMove(to view: SKView) {
         
         // Set the background color
@@ -109,6 +112,7 @@ class Scene : SKScene {
         
     }
 
+    // This method runs approximately 30-60 times per second
     override func update(_ currentTime: TimeInterval) {
         
         // Check to see if visualization has been started yet
@@ -123,6 +127,9 @@ class Scene : SKScene {
             // If not started, set the start time
             startTime = Int(currentTime) - elapsedTime
         }
+        
+        // Increment frame count
+        frameCount += 1
         
         // Remove the circle
         shapeCircle.removeFromParent()
@@ -178,6 +185,14 @@ class Scene : SKScene {
         shapeCircle.zPosition = 0
         addChild(shapeCircle)
 
+        // Plot a line based on the frequency and the current frame
+        if frameCount < Int(self.size.width) {  // Don't add nodes to the scene once we get past the right edge
+            let shapeLine = SKShapeNode(rect: CGRect(x: frameCount, y: 0, width: 1, height: Int(tracker.frequency/2)))
+            shapeLine.lineWidth = 1
+            shapeLine.zPosition = 5
+            shapeLine.strokeColor = NSColor(hue: 0, saturation: 0, brightness: 1.0, alpha: 0.2)
+            addChild(shapeLine)
+        }
         
     }
     
