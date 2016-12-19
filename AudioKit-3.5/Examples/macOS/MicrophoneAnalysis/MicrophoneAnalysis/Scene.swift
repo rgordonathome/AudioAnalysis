@@ -31,6 +31,10 @@ class Scene : SKScene {
     var shapeCircle = SKShapeNode()
     var centrePoint = CGPoint()
     
+    // For tracking elapsed time
+    var elapsedTime: Int = 0
+    var startTime: Int?
+    
     override func didMove(to view: SKView) {
         
         // Set the background color
@@ -107,6 +111,19 @@ class Scene : SKScene {
 
     override func update(_ currentTime: TimeInterval) {
         
+        // Check to see if visualization has been started yet
+        if let startTime = startTime {
+            // If started, how much time has elapsed?
+            let time = Int(currentTime) - startTime
+            if time != elapsedTime {
+                elapsedTime = time
+                print(elapsedTime)
+            }
+        } else {
+            // If not started, set the start time
+            startTime = Int(currentTime) - elapsedTime
+        }
+        
         // Remove the circle
         shapeCircle.removeFromParent()
         
@@ -152,7 +169,7 @@ class Scene : SKScene {
             // http://russellgordon.ca/rsgc/2016-17/ics2o/HSB%20Colour%20Model%20-%20Summary%20-%20Swift.pdf
             let hue = abs(CGFloat(tracker.frequency).remainder(dividingBy: 360)/360)
             backgroundColor = NSColor(hue: hue, saturation: 0.8, brightness: 0.9, alpha: 0.2)
-
+            
         }
 
         // Resize the circle based on amplitude
